@@ -1,0 +1,19 @@
+{
+  "name": "squad-2",
+  "version": "1.0.0",
+  "description": "See the full example [here](https://github.com/csantanapr/tutorial-tekton-argocd-pipeline)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sina-Programs/Squad-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sina-Programs/Squad-2/issues"
+  },
+  "homepage": "https://github.com/Sina-Programs/Squad-2#readme"
+}
