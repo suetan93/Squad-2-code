@@ -7,13 +7,13 @@ class App extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-
+      groceryList: [{item:'cereal', quantity: 2, unit: 'oz'}, {item:'steak', quantity: 2, unit: 'oz'}]
     }
   }
   render() {
     return (
       <>
-        <List />
+        <List groceryList={this.state.groceryList} />
       </>
     );
   }
