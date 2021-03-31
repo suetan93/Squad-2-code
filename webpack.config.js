@@ -4,16 +4,19 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
-  entry: './server/index.js',
+  entry: `${path.join(__dirname, `/client`)}/index.js`,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, `/dist`),
     filename: 'bundle.js'
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: 'babel-loader',
+        loader: 'babel-loader',
+        options : {
+          presets: ['@babel/preset-react', '@babel/preset-env']
+        },
         exclude: /node_modules/
       },
       {

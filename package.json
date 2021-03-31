@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test-run": "nodemon ./server/index.js",
-    "build-dev": "webpack -d -w --mode development",
+    "build-dev": "webpack -w --mode development",
     "build-prod": "webpack -p --mode production",
     "start": "node ./server/index.js"
   },
@@ -44,7 +44,6 @@
     "lodash-webpack-plugin": "^0.11.6",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
-    "path": "^0.12.7",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "testcafe": "^1.13.0",

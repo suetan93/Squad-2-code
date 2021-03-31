@@ -12,4 +12,6 @@ COPY package*.json ./
 
 RUN npm ci
 
+# RUN npm run build-prod
+
 COPY dist .
