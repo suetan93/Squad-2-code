@@ -26,6 +26,18 @@ class App extends React.Component {
     this.setState({groceryList: copyList});
   }
 
+  updateItemName () {
+
+  }
+
+  updateItemAmount () {
+
+  }
+
+  updateItemUnit () {
+
+  }
+
   render() {
     return (
       <>

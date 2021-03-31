@@ -1,11 +1,14 @@
 import React from "react";
 import axios from "axios";
 import ListEntry from "./ListEntry"
+import NewItemForm from "./NewItemForm"
 
 class List extends React.Component {
   constructor (props) {
     super (props);
-    this.state={}
+    this.state = {
+        showForm: false
+    }
   }
 
   render () {
@@ -20,7 +23,8 @@ class List extends React.Component {
               index={i}
               deleteListItem={this.props.deleteListItem}
             />
-          )} 
+          )}
+          <NewItemForm /> 
         </div>
       </>
     )
