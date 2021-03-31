@@ -50,6 +50,9 @@ const config = {
       '.jsx'
     ]
   },
+  optimization: {
+    minimize: true
+  },
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new LodashModuleReplacementPlugin,
