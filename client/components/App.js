@@ -1,14 +1,16 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
+import List from './List';
 
 class App extends React.Component {
+  constructor (props) {
+    super (props);
+    this.state = {}
+  }
   render() {
-    const { name } = this.props;
     return (
       <>
-        <h1>
-          Hello {name}
-        </h1>
+        <List />
       </>
     );
   }
