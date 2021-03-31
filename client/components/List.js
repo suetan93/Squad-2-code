@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import ListEntry from "./ListEntry"
 
 class List extends React.Component {
   constructor (props) {
@@ -12,7 +13,7 @@ class List extends React.Component {
       <>
         <div id='list'>
           <h1>Grocery List</h1>
-          Hello Listy people
+          <ListEntry />
         </div>
       </>
     )
