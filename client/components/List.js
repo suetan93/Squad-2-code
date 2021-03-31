@@ -13,7 +13,14 @@ class List extends React.Component {
       <>
         <div id='list'>
           <h1>Grocery List</h1>
-          <ListEntry />
+          {this.props.groceryList.map((item, i) =>
+            <ListEntry 
+              key={i}
+              item={item} 
+              index={i}
+              deleteListItem={this.props.deleteListItem}
+            />
+          )} 
         </div>
       </>
     )

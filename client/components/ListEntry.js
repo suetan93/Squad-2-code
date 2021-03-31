@@ -7,10 +7,16 @@ class ListEntry extends React.Component {
     this.state={}
   }
 
-  render () {
+  render () { 
     return (
       <>
-        <div id='ListEntry'>List Entry # 1</div>
+        <div id='ListEntry'>
+          <button>Check</button>
+          <div id='quantity'>{this.props.item.quantity}</div>
+          <div id='unit'>{this.props.item.unit}</div>
+          <div id='item'>{this.props.item.item}</div>
+          <button onClick={() => this.props.deleteListItem(this.props.index)}>Delete</button>
+        </div>
       </>
     )
   }
