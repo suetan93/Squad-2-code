@@ -11,7 +11,6 @@ COPY package*.json ./
 
 RUN npm install
 
-WORKDIR /opt/app-root
 
 RUN npm run build-prod
 
