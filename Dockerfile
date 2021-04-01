@@ -17,13 +17,12 @@
 
 # COPY dist .
 
-FROM registry.access.redhat.com/ubi8/nodejs-12:1-52 AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-14 AS builder
 
 WORKDIR /opt/app-root/src
 
 RUN mkdir client
 COPY --chown=default:root client client
-COPY client/package*.json client/
 COPY package*.json ./
 RUN npm ci
 
@@ -31,12 +30,11 @@ WORKDIR /opt/app-root/src/client
 
 RUN npm ci && npm run build-prod
 
-FROM registry.access.redhat.com/ubi8/nodejs-12:1-52
+FROM registry.access.redhat.com/ubi8/nodejs-14
 
 COPY --from=builder /opt/app-root/src/client/build client/build
-COPY public public
+COPY dist dist
 COPY server server
-COPY client/package*.json client/
 COPY package.json .
 RUN npm install --production
 
