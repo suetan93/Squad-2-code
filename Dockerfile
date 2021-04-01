@@ -9,7 +9,7 @@ ENV NODE_ENV=production
 
 COPY package*.json ./
 
-RUN npm ci
+RUN npm install
 
 WORKDIR /opt/app-root
 
