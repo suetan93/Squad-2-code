@@ -29,7 +29,7 @@ RUN npm ci
 
 WORKDIR /opt/app-root/src/client 
 
-RUN npm ci && npm run build
+RUN npm ci && npm run build-prod
 
 FROM registry.access.redhat.com/ubi8/nodejs-12:1-52
 
