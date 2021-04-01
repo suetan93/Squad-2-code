@@ -3,14 +3,13 @@ FROM registry.access.redhat.com/ubi8/nodejs-14
 
 WORKDIR /opt/app-root/src
 
+COPY --chown=default:root. .
+
 # ADD app-src .
 
-ENV NODE_ENV=production
-
-COPY package*.json ./
+# ENV NODE_ENV=development
 
 RUN npm install
-
 
 RUN npm run build-prod
 
