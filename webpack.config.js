@@ -4,9 +4,9 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
-  entry: `${path.resolve(__dirname, `/client`)}/index.js`,
+  entry: './client/index.js'
   output: {
-    path: path.resolve(__dirname, `/dist`),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
