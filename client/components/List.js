@@ -24,7 +24,9 @@ class List extends React.Component {
               deleteListItem={this.props.deleteListItem}
             />
           )}
-          <NewItemForm /> 
+          <NewItemForm
+            addListItem={this.props.addListItem}
+          /> 
         </div>
       </>
     )

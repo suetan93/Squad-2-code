@@ -12,6 +12,7 @@ class App extends React.Component {
     }
 
     this.deleteListItem = this.deleteListItem.bind(this);
+    this.addListItem = this.addListItem.bind(this);
   }
 
   componentDidMount () {
@@ -26,9 +27,13 @@ class App extends React.Component {
     this.setState({groceryList: copyList});
   }
 
-
+  addListItem (newItem) {
+    let copyList = [...this.state.groceryList, newItem]
+    this.setState({groceryList: copyList})
+  }
 
   // updateItemName () {
+
 
   // }
 
@@ -46,6 +51,7 @@ class App extends React.Component {
         <List 
           groceryList={this.state.groceryList}
           deleteListItem={this.deleteListItem}
+          addListItem={this.addListItem}
         />
       </>
     );
