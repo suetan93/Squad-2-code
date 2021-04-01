@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-14
 
 WORKDIR /opt/app-root/src
 
-COPY --chown=default:root. .
+COPY --chown=default:root . .
 
 # ADD app-src .
 
