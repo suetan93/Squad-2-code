@@ -11,7 +11,7 @@ class ListEntry extends React.Component {
     return (
       <>
         <div id='ListEntry'>
-          <button>Check</button>
+          <input type="checkbox" />
           <div id='quantity'>{this.props.item.quantity}</div>
           <div id='unit'>{this.props.item.unit}</div>
           <div id='item'>{this.props.item.item}</div>

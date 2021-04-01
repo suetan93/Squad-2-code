@@ -5,28 +5,13 @@ WORKDIR /opt/app-root/src
 
 COPY --chown=default:root . .
 
-# ADD app-src .
-
-# ENV NODE_ENV=development
+ENV NODE_ENV=production
 
 RUN npm install
 
 RUN npm run build-prod
 
-COPY dist .
-
 CMD [ "npm", "start" ]
-
-
-# FROM registry.access.redhat.com/ubi8/nodejs-14
-# WORKDIR /opt/app-root/src
-# COPY . .
-# RUN npm install
-# EXPOSE 3000
-# CMD [ "npm", "start" ]
-
-
-
 
 
 # FROM registry.access.redhat.com/ubi8/nodejs-14 AS builder
@@ -34,20 +19,18 @@ CMD [ "npm", "start" ]
 # WORKDIR /opt/app-root/src
 
 # RUN mkdir client
-# COPY --chown=default:root client client
-# COPY package*.json ./
-# RUN npm ci
+# COPY --chown=default:root . .
+# RUN npm install
 
-# WORKDIR /opt/app-root/src/client 
+# WORKDIR /opt/app-root/src
 
-# RUN npm ci && npm run build-prod
+# RUN npm install && npm run build-prod
 
 # FROM registry.access.redhat.com/ubi8/nodejs-14
 
-# COPY --from=builder /opt/app-root/src/client/build client/build
-# COPY dist dist
-# COPY server server
-# COPY package.json .
+# COPY --from=builder dist dist
+# COPY --from=builder server server
+# COPY package*.json
 # RUN npm install --production
 
 # ENV NODE_ENV=production
