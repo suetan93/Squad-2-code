@@ -3,9 +3,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-14
 
 CMD [ "npm", "start" ]
 
-RUN mkdir app
-
-WORKDIR app
+WORKDIR /src/app
 
 ENV NODE_ENV=production
 
