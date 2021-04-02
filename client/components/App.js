@@ -18,10 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    //axios call
     this.setGroceries()
-
-    // this.setState({groceryList: groceries})
   }
 
   setGroceries() {
@@ -30,14 +27,10 @@ class App extends React.Component {
       .catch(console.log)
   }
 
-
-  deleteListItem (index) {
-    // delete item off of the list
-    // axios.delete(`${URL}/grocery-items`, {})
-
-    let copyList = [...this.state.groceryList];
-    copyList.splice(index, 1);
-    this.setState({groceryList: copyList});
+  deleteListItem (id) {
+    axios.delete(`${URL}/grocery-items/${id}`)
+      .then(() => this.setGroceries())
+      .catch(console.log)
   }
 
   addListItem (newItem) {
@@ -62,9 +55,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {/* <center>
-          <h1>Grocery List</h1>
-        </center> */}
         <List 
           groceryList={this.state.groceryList}
           deleteListItem={this.deleteListItem}
