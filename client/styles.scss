@@ -13,7 +13,7 @@ body {
 }
 
 button, #addBttn {
-    background-color: $darkTeal;
+    background-color: $darkTeal ;
     color: #fff;
     max-width: 80px;
     height: 25px;
@@ -63,7 +63,7 @@ input {
 
     .listEntry, #title {
         display: grid;
-        grid-template-columns: 7% 8% 10% 55% 20%;
+        grid-template-columns: 7% 10% 13% 50% 20%;
         border: 0px dashed red;
         width: 500px;
         padding: 3px;

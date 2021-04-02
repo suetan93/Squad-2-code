@@ -28,7 +28,7 @@ class ListEntry extends React.Component {
           <div id='unit'>{this.props.item.unit}</div>
           <div id='item'>{this.props.item.item}</div>
           <div id="delete">
-            <button onClick={() => this.props.deleteListItem(this.props.index)}>Remove</button>
+            <button id="remove" onClick={() => this.props.deleteListItem(this.props.index)}>Remove</button>
           </div>
         </div>
       </>
