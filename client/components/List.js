@@ -15,7 +15,7 @@ class List extends React.Component {
     return (
       <>
         <div id='list'>
-          <h1>Grocery List</h1>
+          <div id="listName">Grocery List</div>
           {this.props.groceryList.map((item, i) =>
             <ListEntry 
               key={i}
