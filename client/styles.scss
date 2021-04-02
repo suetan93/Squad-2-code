@@ -16,13 +16,23 @@ button, #addBttn {
     background-color: $darkTeal;
     color: #fff;
     max-width: 80px;
-    height: 20px;
+    height: 25px;
     border: none;
     border-radius: 3px;
     font-weight: bold;
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+button:hover, #addBttn:hover {
+    background-color: $teal;
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+input {
+    padding: 2px;
 }
 
 #container {
@@ -51,7 +61,7 @@ button, #addBttn {
         overflow: auto;
     }
 
-    #listEntry, #title {
+    .listEntry, #title {
         display: grid;
         grid-template-columns: 7% 8% 10% 55% 20%;
         border: 0px dashed red;
@@ -80,4 +90,14 @@ button, #addBttn {
         border-bottom: 1px solid #000;
         margin-bottom: 10px;
     }
+
+}
+
+#addForm {
+    border: 0px dashed red;
+    width: 450px;
+    display: grid;
+    grid-template-columns: 55% 15% 15% 15%;
+    column-gap: 5px;
+    margin-right: 5px;
 }

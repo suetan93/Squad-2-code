@@ -4,14 +4,26 @@ import axios from "axios";
 class ListEntry extends React.Component {
   constructor (props) {
     super (props);
-    this.state={}
+    this.state = {
+        
+    }
+
+    this.handleCheckbox = this.handleCheckbox.bind(this)
   }
+
+    handleCheckbox(e) {
+        if(e.target.checked) {
+            document.getElementById(this.props.index).setAttribute("style", "font-style: italic; color: #808080; text-decoration: line-through")
+        } else {
+            document.getElementById(this.props.index).removeAttribute("style")
+        }
+    }
 
   render () { 
     return (
       <>
-        <div id='listEntry'>
-          <input id='check' type='checkbox' />
+        <div id={this.props.index} className='listEntry'>
+          <input id='check' type='checkbox' onClick={(e) => this.handleCheckbox(e)}/>
           <div id='quantity'>{this.props.item.quantity}</div>
           <div id='unit'>{this.props.item.unit}</div>
           <div id='item'>{this.props.item.item}</div>

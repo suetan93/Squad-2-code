@@ -18,10 +18,10 @@ class List extends React.Component {
         <div id='list'>
           <center>
             <div id="title">
-                <div class="labels"></div>
-                <div class="labels">Qty</div>
-                <div class="labels">Unit</div>
-                <div class="labels">Item</div>
+                <div className="labels"></div>
+                <div className="labels">Qty</div>
+                <div className="labels">Unit</div>
+                <div className="labels">Item</div>
             </div>
             <div id="divEntries">
                 {this.props.groceryList.map((item, i) =>

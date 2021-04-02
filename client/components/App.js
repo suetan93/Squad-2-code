@@ -3,7 +3,7 @@ import axios from "axios";
 import List from './List';
 const URL = `http://squad2-api-tekton-argocd-squad2-api.cohort2bootcamp-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud`
 
-let groceries = [{item:'cereal', quantity: 2, unit: 'oz'}, {item:'steak', quantity: 2, unit: 'oz'}]
+let groceries = [{id: 1, item:'cereal', quantity: 2, unit: 'oz'}, {id: 2, item:'steak', quantity: 2, unit: 'oz'}]
 
 class App extends React.Component {
   constructor (props) {
