@@ -26,7 +26,7 @@ class ListEntry extends React.Component {
           <input id='check' type='checkbox' onClick={(e) => this.handleCheckbox(e)}/>
           <div id='quantity'>{this.props.item.quantity}</div>
           <div id='unit'>{this.props.item.unit}</div>
-          <div id='item'>{this.props.item.item}</div>
+          <div id='item'>{this.props.item.itemName}</div>
           <div id="delete">
             <button id="remove" onClick={() => this.props.deleteListItem(this.props.index)}>Remove</button>
           </div>

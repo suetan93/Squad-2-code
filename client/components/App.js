@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import List from './List';
-const URL = `http://squad2-api-tekton-argocd-squad2-api.cohort2bootcamp-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud`
+const URL = `http://squad2-api-tekton-argocd-squad2-api.cohort2bootcamp-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/api/v1`
 
 let groceries = [{id: 1, item:'cereal', quantity: 2, unit: 'oz'}, {id: 2, item:'steak', quantity: 2, unit: 'oz'}]
 
@@ -14,31 +14,36 @@ class App extends React.Component {
 
     this.deleteListItem = this.deleteListItem.bind(this);
     this.addListItem = this.addListItem.bind(this);
+    this.setGroceries = this.setGroceries.bind(this);
   }
 
   componentDidMount () {
     //axios call
-    // axios.get(`${URL}/api/v1/grocery-items`)
-    //   .then(console.log)
-    //   .then((groceries) => this.setState({groceryList: groceries}))
-    //   .catch(console.log)
+    this.setGroceries()
 
-    this.setState({groceryList: groceries})
+    // this.setState({groceryList: groceries})
   }
-  
+
+  setGroceries() {
+    axios.get(`${URL}/grocery-items`)
+      .then((groceries) => this.setState({groceryList: groceries.data}))
+      .catch(console.log)
+  }
+
 
   deleteListItem (index) {
     // delete item off of the list
-    // axios.delete(`${URL}/api/v1/grocery-items`, {})
+    // axios.delete(`${URL}/grocery-items`, {})
 
-    let copyList = [...this.state.groceryList]
-    copyList.splice(index, 1)
+    let copyList = [...this.state.groceryList];
+    copyList.splice(index, 1);
     this.setState({groceryList: copyList});
   }
 
   addListItem (newItem) {
-    let copyList = [...this.state.groceryList, newItem]
-    this.setState({groceryList: copyList})
+    axios.post(`${URL}/grocery-items`, newItem)
+      .then(({data}) => this.setState({groceryList: [...this.state.groceryList, data]}))
+      .catch(console.log)
   }
 
   // updateItemName () {
