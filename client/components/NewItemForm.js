@@ -17,19 +17,20 @@ class NewItemForm extends React.Component {
     this.setState({[e.target.name] : e.target.value})
   }
 
-  handleSubmit () {
+  handleSubmit (e) {
+      e.preventDefault()
       this.props.addListItem(this.state)
       this.setState({itemName: '', quantity: 1, unit: ''})
   }
 
   render() {
     return (
-        <div id="addForm">
+        <form id="addForm" onSubmit={(e) => {this.handleSubmit(e)}}>
           <input type="text" name="itemName" value={this.state.itemName} placeholder="Item Name" onChange={(e) => {this.handleChange(e)}} required />
           <input type="number" name="quantity" value={this.state.quantity} min="1" placeholder="Item Amount" onChange={(e) => {this.handleChange(e)}} required />
           <input type="text" name="unit" value={this.state.unit} placeholder="Unit" onChange={(e) => {this.handleChange(e)}} />
-          <button id="addBttn" onClick={(e) => {this.handleSubmit(e)}}>Add</button>
-        </div>
+          <button id="addBttn">Add</button>
+        </form>
     )
   }
 }
