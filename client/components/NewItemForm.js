@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 class NewItemForm extends React.Component {
   constructor (props) {
@@ -18,22 +17,19 @@ class NewItemForm extends React.Component {
     this.setState({[e.target.name] : e.target.value})
   }
 
-  handleSubmit (e) {
-      e.preventDefault()
+  handleSubmit () {
       this.props.addListItem(this.state)
       this.setState({item: '', quantity: 1, unit: ''})
   }
 
   render() {
     return (
-      <>
-        <form id="addForm" onSubmit={this.handleSubmit}>
+        <div id="addForm" >
           <input type="text" name="itemName" value={this.state.item} placeholder="Item Name" onChange={this.handleChange} required />
           <input type="number" name="quantity" value={this.state.quantity} min="1" placeholder="Item Amount" onChange={this.handleChange} required />
           <input type="text" name="unit" value={this.state.unit} placeholder="Unit" onChange={this.handleChange} />
-          <input id="addBttn" type="submit" value="Add"></input>
-        </form>
-      </>
+          <button id="addBttn" onClick={this.handleSubmit}>Add</button>
+        </div>
     )
   }
 }
