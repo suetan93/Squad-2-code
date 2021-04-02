@@ -29,7 +29,7 @@ class App extends React.Component {
 
   deleteListItem (index) {
     // delete item off of the list
-    axios.delete(`${URL}/api/v1/grocery-items`, {})
+    // axios.delete(`${URL}/api/v1/grocery-items`, {})
 
     let copyList = [...this.state.groceryList]
     copyList.splice(index, 1)
@@ -57,6 +57,9 @@ class App extends React.Component {
   render() {
     return (
       <>
+        {/* <center>
+          <h1>Grocery List</h1>
+        </center> */}
         <List 
           groceryList={this.state.groceryList}
           deleteListItem={this.deleteListItem}

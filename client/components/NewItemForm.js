@@ -31,7 +31,7 @@ class NewItemForm extends React.Component {
           <input type="text" name="item" value={this.state.item} placeholder="Item Name" onChange={this.handleChange} required />
           <input type="number" name="quantity" value={this.state.quantity} min="1" placeholder="Item Amount" onChange={this.handleChange} required />
           <input type="text" name="unit" value={this.state.unit} placeholder="Unit" onChange={this.handleChange} required />
-          <input type="submit" value="Submit"></input>
+          <input id="addBttn" type="submit" value="Add"></input>
         </form>
       </>
     )

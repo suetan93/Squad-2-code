@@ -1,24 +1,83 @@
-$font: Arial, sans-serif;
+$font: 'Poppins', sans-serif;
+$cream: #f7f3e9;
+$teal: #a3d2ca;
+$darkTeal: #5eaaa8;
+$coral: #f05945;
 
 body {
-    background-color: rgb(236, 236, 236);
+    background-color: $cream;
     font-family: $font;
-    padding: 20px;
+    font-weight: 200;
+    padding: 40px;
+    box-sizing: border-box;
+}
 
+button, #addBttn {
+    background-color: $darkTeal;
+    color: #fff;
+    max-width: 80px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#container {
+    border: 0px dashed red;
+    width: 600px;
+    margin: 0 auto;
+}
+
+#listName {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: $coral;
 }
 
 #list {
-    margin: 0 auto;
     background-color: #fff;
-    border: 1px solid #000;
-    border-radius:  5px;
-    width: 600px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 20px;
+    width: 550px;
     padding: 20px;
 
-    #listEntry {
-        display: flex;
-        border: 1px dashed red;
-        width: 550px;
+    #divEntries {
+        border: 0px dashed red;
+        height: 300px;
+        overflow: auto;
+    }
+
+    #listEntry, #title {
+        display: grid;
+        grid-template-columns: 7% 8% 10% 55% 20%;
+        border: 0px dashed red;
+        width: 500px;
+        padding: 3px;
+        font-size: 20px;
         
+        #check, #quantity, #unit, #item, #delete, .labels {
+            border: 0px dashed red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .labels {
+            font-weight: 500;
+        }
+
+        #check {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    #title {
+        border-bottom: 1px solid #000;
+        margin-bottom: 10px;
     }
 }

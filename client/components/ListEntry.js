@@ -11,11 +11,13 @@ class ListEntry extends React.Component {
     return (
       <>
         <div id='listEntry'>
-          <input type="checkbox" />
+          <input id='check' type='checkbox' />
           <div id='quantity'>{this.props.item.quantity}</div>
           <div id='unit'>{this.props.item.unit}</div>
           <div id='item'>{this.props.item.item}</div>
-          <button onClick={() => this.props.deleteListItem(this.props.index)}>Remove</button>
+          <div id="delete">
+            <button onClick={() => this.props.deleteListItem(this.props.index)}>Remove</button>
+          </div>
         </div>
       </>
     )
